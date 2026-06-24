@@ -18,11 +18,16 @@
 <nav class="side-nav">
   <div class="side-nav__brand">V.A</div>
   <ul class="side-nav__links">
-    <li><a href="#gallery" class="active" data-label="01">Галерея</a></li>
-    <li><a href="#about" data-label="02">Художник</a></li>
-    <li><a href="#contact" data-label="03">Контакты</a></li>
+    <li><a href="#gallery" class="active" data-label="01" data-i18n="nav.gallery">Галерея</a></li>
+    <li><a href="#about" data-label="02" data-i18n="nav.about">Художник</a></li>
+    <li><a href="#reviews" data-label="03" data-i18n="nav.reviews">Отзывы</a></li>
+    <li><a href="#contact" data-label="04" data-i18n="nav.contact">Контакты</a></li>
   </ul>
-  <div class="side-nav__coords" id="coords">36.94N / 22.10E</div>
+  <button class="lang-switch" id="langSwitch" aria-label="Switch language">
+    <span class="lang-switch__opt active" data-lang="ru">RU</span>
+    <span class="lang-switch__sep">/</span>
+    <span class="lang-switch__opt" data-lang="en">EN</span>
+  </button>
 </nav>
 
 <!-- HERO -->
@@ -30,14 +35,14 @@
   <div class="hero__bg" id="heroBg"></div>
   <div class="hero__grid"></div>
   <div class="hero__content">
-    <p class="hero__eyebrow">// ЦИФРОВАЯ ГАЛЕРЕЯ — АРХИВ 001</p>
+    <p class="hero__eyebrow" data-i18n="hero.eyebrow">// ЦИФРОВАЯ ГАЛЕРЕЯ — АРХИВ 001</p>
     <h1 class="hero__title">
-      <span>ГОРОД,</span>
-      <span>КОТОРЫЙ</span>
-      <span class="accent">НЕ СПИТ</span>
+      <span data-i18n="hero.title1">ГОРОД,</span>
+      <span data-i18n="hero.title2">КОТОРЫЙ</span>
+      <span class="accent" data-i18n="hero.title3">НЕ СПИТ</span>
     </h1>
-    <p class="hero__sub">Неон, толпа и тысяча огней в каждом кадре.<br>Визуальные истории на стыке человека и машины.</p>
-    <a href="#gallery" class="hero__cta">Смотреть работы <span class="hero__cta-arrow">↓</span></a>
+    <p class="hero__sub" data-i18n="hero.sub">Неон, толпа и тысяча огней в каждом кадре.<br>Визуальные истории на стыке человека и машины.</p>
+    <a href="#gallery" class="hero__cta"><span data-i18n="hero.cta">Смотреть работы</span> <span class="hero__cta-arrow">↓</span></a>
   </div>
   <div class="hero__dots" id="heroDots"></div>
   <div class="hero__tag">SCAN.READY</div>
@@ -47,8 +52,8 @@
 <section class="gallery" id="gallery">
   <div class="section-head">
     <span class="section-head__num">01</span>
-    <h2 class="section-head__title">Галерея</h2>
-    <p class="section-head__desc">Каждая работа — кадр из истории, которая не закончилась. Наведи курсор, чтобы считать данные.</p>
+    <h2 class="section-head__title" data-i18n="gallery.title">Галерея</h2>
+    <p class="section-head__desc" data-i18n="gallery.desc">Каждая работа — кадр из истории, которая не закончилась. Наведи курсор, чтобы считать данные.</p>
   </div>
 
   <div class="gallery__grid" id="galleryGrid">
@@ -64,34 +69,70 @@
       <div class="about__frame-corner tr"></div>
       <div class="about__frame-corner bl"></div>
       <div class="about__frame-corner br"></div>
-      <div class="about__placeholder">PORTRAIT.IMG</div>
+      <img class="about__photo" id="aboutPhoto" src="images/artist.jpg" alt="Портрет художника" onerror="this.style.display='none'; document.getElementById('aboutPlaceholder').style.display='flex';">
+      <div class="about__placeholder" id="aboutPlaceholder">PORTRAIT.IMG</div>
     </div>
   </div>
   <div class="about__content">
     <span class="section-head__num">02</span>
-    <h2 class="section-head__title">Художник</h2>
-    <p class="about__text">
+    <h2 class="section-head__title" data-i18n="about.title">Художник</h2>
+    <p class="about__text" data-i18n="about.text1">
       Я работаю на границе фотореализма и цифрового сна — там, где свет от вывесок смешивается с дождём,
       а тело почти становится частью интерфейса. Каждая работа начинается с одного вопроса:
       что чувствует город, когда на него никто не смотрит?
     </p>
-    <p class="about__text">
+    <p class="about__text" data-i18n="about.text2">
       В работе использую генеративные инструменты как кисть, а не как автопилот — каждый кадр
       собирается из десятков итераций, пока не останется единственно верная версия.
     </p>
     <div class="about__stats">
       <div class="about__stat">
         <span class="about__stat-num">120+</span>
-        <span class="about__stat-label">работ создано</span>
+        <span class="about__stat-label" data-i18n="about.stat1">работ создано</span>
       </div>
       <div class="about__stat">
         <span class="about__stat-num">4</span>
-        <span class="about__stat-label">года в индустрии</span>
+        <span class="about__stat-label" data-i18n="about.stat2">года в индустрии</span>
       </div>
       <div class="about__stat">
         <span class="about__stat-num">∞</span>
-        <span class="about__stat-label">миров впереди</span>
+        <span class="about__stat-label" data-i18n="about.stat3">миров впереди</span>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="section-head">
+    <span class="section-head__num">03</span>
+    <h2 class="section-head__title" data-i18n="reviews.title">Отзывы</h2>
+    <p class="section-head__desc" data-i18n="reviews.desc">Журнал отзывов и предложений. Пишите, что думаете о работах — это видят все.</p>
+  </div>
+
+  <div class="reviews__layout">
+    <form class="review-form" id="reviewForm">
+      <label class="review-form__label" data-i18n="reviews.nameLabel">Имя</label>
+      <input class="review-form__input" type="text" id="reviewName" maxlength="40" required>
+
+      <label class="review-form__label" data-i18n="reviews.ratingLabel">Оценка</label>
+      <div class="star-input" id="starInput">
+        <button type="button" class="star" data-value="1">★</button>
+        <button type="button" class="star" data-value="2">★</button>
+        <button type="button" class="star" data-value="3">★</button>
+        <button type="button" class="star" data-value="4">★</button>
+        <button type="button" class="star" data-value="5">★</button>
+      </div>
+
+      <label class="review-form__label" data-i18n="reviews.textLabel">Отзыв</label>
+      <textarea class="review-form__input review-form__textarea" id="reviewText" maxlength="500" rows="4" required></textarea>
+
+      <button type="submit" class="review-form__submit" data-i18n="reviews.submit">Опубликовать</button>
+      <p class="review-form__status" id="reviewStatus"></p>
+    </form>
+
+    <div class="reviews__list" id="reviewsList">
+      <p class="reviews__loading" id="reviewsLoading" data-i18n="reviews.loading">Загрузка отзывов...</p>
     </div>
   </div>
 </section>
@@ -99,13 +140,13 @@
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="contact__inner">
-    <span class="section-head__num">03</span>
-    <h2 class="section-head__title">Связь</h2>
-    <p class="contact__text">Заказы, коллаборации, вопросы по работам — пишите.</p>
+    <span class="section-head__num">04</span>
+    <h2 class="section-head__title" data-i18n="contact.title">Связь</h2>
+    <p class="contact__text" data-i18n="contact.desc">Заказы, коллаборации, вопросы по работам — пишите.</p>
 
     <div class="contact__grid">
       <a href="mailto:hello@void.archive" class="contact__card">
-        <span class="contact__card-label">Почта</span>
+        <span class="contact__card-label" data-i18n="contact.email">Почта</span>
         <span class="contact__card-value">hello@void.archive</span>
       </a>
       <a href="https://instagram.com" target="_blank" class="contact__card">
@@ -120,10 +161,11 @@
   </div>
   <footer class="footer">
     <span>© 2026 VOID.ARCHIVE</span>
-    <span>Сделано вручную, кадр за кадром</span>
+    <span data-i18n="footer.made">Сделано вручную, кадр за кадром</span>
   </footer>
 </section>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
