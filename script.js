@@ -262,7 +262,7 @@ sections.forEach((section) => observer.observe(section));
 
 // ===== Reviews via Supabase =====
 // ВАЖНО: впиши сюда свои значения из Supabase (Project Settings → API)
-const SUPABASE_URL = "https://fuubqsignatcczubdfnm.supabase.co/rest/v1/";
+const SUPABASE_URL = "https://fuubqsignatcczubdfnm.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_BgILl1WxXwG32UkCbyInKw_HBMTLdKo";
 
 let supabaseClient = null;
