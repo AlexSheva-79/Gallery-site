@@ -262,8 +262,8 @@ sections.forEach((section) => observer.observe(section));
 
 // ===== Reviews via Supabase =====
 // ВАЖНО: впиши сюда свои значения из Supabase (Project Settings → API)
-const SUPABASE_URL = "https://ciwvtkjsymasrzittsxw.supabase.co";
-const SUPABASE_ANON_KEY = "sb_publishable_ydyNL8hVH7mgZ3_eXQ-0GA_dE15C_60";
+const SUPABASE_URL = "https://fuubqsignatcczubdfnm.supabase.co/rest/v1/";
+const SUPABASE_ANON_KEY = "sb_publishable_BgILl1WxXwG32UkCbyInKw_HBMTLdKo";
 
 let supabaseClient = null;
 if (window.supabase && SUPABASE_URL.includes('supabase.co') && !SUPABASE_URL.includes('YOUR-PROJECT')) {
