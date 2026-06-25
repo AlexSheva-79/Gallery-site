@@ -14,6 +14,13 @@
 <div class="grain"></div>
 <div class="scanline"></div>
 
+<!-- language switch (separate from side-nav so it survives on mobile) -->
+<button class="lang-switch" id="langSwitch" aria-label="Switch language">
+  <span class="lang-switch__opt active" data-lang="ru">RU</span>
+  <span class="lang-switch__sep">/</span>
+  <span class="lang-switch__opt" data-lang="en">EN</span>
+</button>
+
 <!-- side nav -->
 <nav class="side-nav">
   <div class="side-nav__brand">V.A</div>
@@ -23,11 +30,6 @@
     <li><a href="#reviews" data-label="03" data-i18n="nav.reviews">Отзывы</a></li>
     <li><a href="#contact" data-label="04" data-i18n="nav.contact">Контакты</a></li>
   </ul>
-  <button class="lang-switch" id="langSwitch" aria-label="Switch language">
-    <span class="lang-switch__opt active" data-lang="ru">RU</span>
-    <span class="lang-switch__sep">/</span>
-    <span class="lang-switch__opt" data-lang="en">EN</span>
-  </button>
 </nav>
 
 <!-- HERO -->
@@ -69,7 +71,7 @@
       <div class="about__frame-corner tr"></div>
       <div class="about__frame-corner bl"></div>
       <div class="about__frame-corner br"></div>
-      <img class="about__photo" id="aboutPhoto" src="images/artist.png" alt="Портрет художника">
+      <img class="about__photo" id="aboutPhoto" src="images/artist.png" alt="Портрет художника" onerror="this.style.display='none'; document.getElementById('aboutPlaceholder').style.display='flex';">
       <div class="about__placeholder" id="aboutPlaceholder">PORTRAIT.IMG</div>
     </div>
   </div>
