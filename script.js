@@ -141,16 +141,24 @@ setInterval(() => {
 
 // ===== Placeholder works data — замени на свои работы =====
 const works = [
-  { title: "Взгляд сквозь туман", tag: "cyberpunk / портрет", img: "images/work-01.png" },
-  { title: "Город над головой", tag: "cyberpunk / портрет", img: "images/work-02.png" },
-  { title: "Улица тысячи огней", tag: "cyberpunk / city", img: "images/banner-01.png" },
-  { title: "Перекрёсток теней", tag: "cyberpunk / city", img: "images/banner-02.png" },
-  { title: "Полуденный шум", tag: "cyberpunk / city", img: "images/banner-03.png" },
-  { title: "Точка невозврата", tag: "action / композиция" },
-  { title: "Стекло и сталь", tag: "cyberpunk / интерьер" },
-  { title: "Орбита тишины", tag: "sci-fi / абстракция" },
-  { title: "Граница света", tag: "atmospheric / портрет" },
-];
+  { title: "Телесный архив: ритуал нанесения / Bodily Archive: The Ritual of Inscription", tag: "cyberpunk / портрет", img: "images/work-01.png" },
+  { title: "Нити памяти / Threads of Memory", tag: "cyberpunk / портрет", img: "images/work-10.png" },
+  { title: "Одиночество в режиме ожидания / Loneliness on Standby", tag: "cyberpunk / портрет", img: "images/work-12.png" },
+  { title: "Точка отправления / Point of Departure", tag: "cyberpunk / city", img: "images/work-07.png" },
+  { title: "Солнечный ветер на двоих / Solar Wind for Two", tag: "cyberpunk / портрет", img: "images/work-11.png" },
+  { title: "Нежность в тени неона / Tenderness in the Neon Shadow", tag: "cyberpunk / портрет", img: "images/work-14.png" },
+  { title: "Свет в потоке машин / Light in the Stream of Cars", tag: "cyberpunk / портрет", img: "images/work-13.png" },
+  { title: "Невинность на взводе / Innocence on the Trigger", tag: "cyberpunk / портрет", img: "images/work-03.png" },
+  { title: "Пост-возраст: эстетика позднего бунта / Post-Age: Aesthetics of Late Rebellion", tag: "cyberpunk / портрет", img: "images/work-05.png" },
+  { title: "Тишина на берегу неона / Silence on the Neon Shore", tag: "cyberpunk / портрет", img: "images/work-02.png" },
+  { title: "Синтетическая юность: портрет в стиле стрит-гранж / Synthetic Youth: Portrait in Street-Grunge Style", tag: "cyberpunk / портрет", img: "images/work-04.png" },
+  { title: "Золотой код предков / Golden Code of Ancestors", tag: "cyberpunk / портрет", img: "images/work-06.png" },
+  { title: "Эхо ненастоящего утра / Echo of a Simulated Morning", tag: "cyberpunk / city", img: "images/work-08.png" },
+  { title: "Город, который дышит ржавчиной / City That Breathes Rust", tag: "cyberpunk / city", img: "images/work-09.png" },
+  { title: "Пост-кукольность: эстетика цифрового флирта / Post-Doll Aesthetics: Digital Flirtation", tag: "cyberpunk / портрет", img: "images/work-15.png" },
+  { title: "Детство в черном / Childhood in Black", tag: "cyberpunk / портрет", img: "images/work-16.png" },
+  { title: "Тёплый ветер для стального странника / Warm Wind for a Steel Wanderer", tag: "cyberpunk / city", img: "images/work-17.png" },
+  ];
 
 const grid = document.getElementById('galleryGrid');
 
