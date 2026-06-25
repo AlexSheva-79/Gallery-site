@@ -158,6 +158,7 @@ const works = [
   { title: "Пост-кукольность: эстетика цифрового флирта / Post-Doll Aesthetics: Digital Flirtation", tag: "cyberpunk / портрет", img: "images/work-15.png" },
   { title: "Детство в черном / Childhood in Black", tag: "cyberpunk / портрет", img: "images/work-16.png" },
   { title: "Тёплый ветер для стального странника / Warm Wind for a Steel Wanderer", tag: "cyberpunk / city", img: "images/work-17.png" },
+  { title: "Пуховый кокон для синтетической души / Puffer Cocoon for a Synthetic Soul", tag: "cyberpunk / портрет", img: "images/work-20.png" },
   ];
 
 const grid = document.getElementById('galleryGrid');
