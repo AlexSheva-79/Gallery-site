@@ -1,0 +1,120 @@
+/* ===== GALLERY PAGE — отдельный «выставочный» вид ===== */
+
+.gallery-page-body {
+  /* на этой странице нет боковой колонки — контент во всю ширину */
+}
+
+/* ===== TOP BAR ===== */
+.exhibit-bar {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 22px 48px;
+  background: rgba(13, 10, 20, 0.75); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.exhibit-bar__logo {
+  font-family: var(--font-display); font-weight: 700; font-size: 16px;
+  letter-spacing: 0.1em; color: var(--accent);
+}
+
+.exhibit-bar__count {
+  font-family: var(--font-mono); font-size: 11px; color: var(--text-dim);
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+
+.lang-switch--exhibit {
+  position: static !important;
+  writing-mode: horizontal-tb !important;
+  padding: 8px 14px !important;
+}
+
+@media (max-width: 640px) {
+  .exhibit-bar { padding: 16px 20px; }
+  .exhibit-bar__count { display: none; }
+}
+
+/* ===== EXHIBIT INTRO ===== */
+.exhibit-intro {
+  padding: 100px 48px 64px;
+  max-width: 920px;
+}
+
+.exhibit-intro__eyebrow {
+  font-family: var(--font-mono); font-size: 12px; color: var(--accent-2);
+  letter-spacing: 0.1em; margin-bottom: 20px;
+}
+
+.exhibit-intro__title {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(48px, 8vw, 96px); line-height: 0.98;
+  margin-bottom: 24px;
+  background: linear-gradient(90deg, var(--text), var(--accent));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+.exhibit-intro__desc {
+  font-size: 18px; color: var(--text-dim); line-height: 1.6;
+  max-width: 600px;
+}
+
+@media (max-width: 640px) {
+  .exhibit-intro { padding: 56px 20px 40px; }
+}
+
+/* ===== EXHIBIT GRID ===== */
+.exhibit-grid-wrap {
+  padding: 0 48px 120px;
+}
+
+.exhibit-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px;
+}
+
+@media (max-width: 1200px) {
+  .exhibit-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 860px) {
+  .exhibit-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .exhibit-grid { grid-template-columns: 1fr; }
+  .exhibit-grid-wrap { padding: 0 20px 80px; }
+}
+
+/* Спокойный «музейный» hover — переопределяет сканлинии/координаты для этой страницы */
+.exhibit-grid .work__coord { display: none; }
+
+.exhibit-grid .work {
+  aspect-ratio: 3/4;
+}
+
+.exhibit-grid .work__info {
+  background: linear-gradient(to top, rgba(13,10,20,0.95), transparent);
+}
+
+/* ===== FOOTER ===== */
+.exhibit-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 32px 48px; border-top: 1px solid var(--border);
+}
+
+.exhibit-footer__back {
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--font-mono); font-size: 13px; color: var(--text-dim);
+  letter-spacing: 0.05em; transition: color 0.3s ease;
+}
+
+.exhibit-footer__back:hover { color: var(--accent); }
+
+.exhibit-footer__arrow { transition: transform 0.3s ease; }
+.exhibit-footer__back:hover .exhibit-footer__arrow { transform: translateX(-4px); }
+
+.exhibit-footer__copy {
+  font-family: var(--font-mono); font-size: 11px; color: var(--text-dim);
+  letter-spacing: 0.05em; opacity: 0.6;
+}
+
+@media (max-width: 640px) {
+  .exhibit-footer { padding: 24px 20px; flex-direction: column; gap: 16px; align-items: flex-start; }
+}
