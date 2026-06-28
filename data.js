@@ -129,4 +129,5 @@ const works = [
   { title: "Будущее в черном / A Future in Black", tag: "cyberpunk / портрет", img: "images/work-16.png" },
   { title: "Тёплый ветер для стального странника / Warm Wind for a Steel Wanderer", tag: "cyberpunk / city", img: "images/work-17.png" },
   { title: "Пуховый кокон для синтетической души / Puffer Cocoon for a Synthetic Soul", tag: "cyberpunk / портрет", img: "images/work-20.png" },
+  { title: "Андреналин / Adrenaline", tag: "cyberpunk / портрет", img: "images/work-21.png" },
 ];
