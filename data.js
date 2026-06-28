@@ -102,6 +102,10 @@ const heroBanners = [
   "images/banner-01.png",
   "images/banner-02.png",
   "images/banner-03.png",
+  "images/work-01.png",
+  "images/work-12.png",
+  "images/work-14.png",
+  "images/work-04.png",
 ];
 
 // ===== Работы — единый источник для витрины на главной и полной галереи =====

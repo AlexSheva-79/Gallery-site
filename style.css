@@ -74,6 +74,8 @@ overflow-x:hidden;
 
 line-height:1.7;
 
+position:relative;
+
 }
 
 img{
@@ -116,22 +118,37 @@ inset:0;
 
 z-index:-20;
 
-background:
+background-image:
 
-radial-gradient(circle at 15% 20%,
-rgba(0,217,255,.05),
-transparent 32%),
+radial-gradient(circle at 15% 20%, rgba(0,217,255,.05), transparent 32%),
 
-radial-gradient(circle at 85% 70%,
-rgba(255,31,116,.06),
-transparent 34%),
+radial-gradient(circle at 85% 70%, rgba(255,31,116,.06), transparent 34%),
 
-linear-gradient(
-180deg,
-#040506,
-#07090d 50%,
-#050608
-);
+url('assets/backgrounds/hero-bg.webp');
+
+background-size:auto, auto, cover;
+
+background-position:center, center, center;
+
+background-repeat:no-repeat, no-repeat, no-repeat;
+
+opacity:.5;
+
+filter:saturate(1.05) contrast(1.05);
+
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+z-index:-19;
+
+background:rgba(5,6,8,.55);
 
 }
 
@@ -223,7 +240,10 @@ SITE HEADER (fixed top, 90px, blur on scroll)
 .site-header__logo{
   display:flex;
   align-items:center;
-  height:84px;
+  height:160px;
+  margin-top:35px;
+  position:relative;
+  z-index:5;
 }
 
 .site-header__logo img{
@@ -1007,7 +1027,7 @@ padding:90px var(--gutter) 0;
 
 overflow:hidden;
 
-background:#050608;
+background:rgba(5,6,8,.35);
 
 isolation:isolate;
 
@@ -1016,40 +1036,7 @@ isolation:isolate;
 
 
 /* ---------- background ---------- */
-
-.hero__photobg{
-
-position:absolute;
-
-inset:-4%;
-
-background-size:cover;
-
-background-position:center;
-
-z-index:-8;
-
-opacity:0;
-
-filter:saturate(1.05) contrast(1.05);
-
-animation:
-
-heroPhotoBgIn 1s ease-out forwards,
-
-heroParallaxBg 22s ease-in-out infinite alternate;
-
-animation-delay:0s, 1s;
-
-}
-
-@keyframes heroPhotoBgIn{
-
-from{ opacity:0; }
-
-to{ opacity:.55; }
-
-}
+/* Фон города теперь глобальный (body::before) — здесь больше не нужен отдельный слой */
 
 @keyframes heroParallaxBg{
 
@@ -1212,7 +1199,7 @@ z-index:7;
 
 @media (prefers-reduced-motion: reduce){
 
-.hero__photobg, .hero__overlay--glitch, .hero__overlay--splash-pink, .hero__overlay--splash-cyan{
+.hero__overlay--glitch, .hero__overlay--splash-pink, .hero__overlay--splash-cyan{
   animation:none;
 }
 
@@ -1242,7 +1229,7 @@ transform 8s ease;
 
 .hero__slide.active{
 
-opacity:1;
+opacity:.5;
 
 transform:scale(1.16);
 
@@ -2565,29 +2552,33 @@ user-select:none;
 
 .about__deco--crown{
 
-top:-46px;
+top:-58px;
 
-right:-30px;
+right:10px;
 
-width:120px;
+width:84px;
 
 transform:rotate(8deg);
 
-filter:drop-shadow(0 0 14px rgba(15,224,207,.35));
+filter:drop-shadow(0 0 14px rgba(15,224,207,.4));
+
+z-index:7;
 
 }
 
 .about__deco--smile{
 
-bottom:-34px;
+top:-30px;
 
-left:-36px;
+left:206px;
 
-width:96px;
+width:64px;
 
 transform:rotate(-6deg);
 
-filter:drop-shadow(0 0 14px rgba(255,31,116,.3));
+filter:drop-shadow(0 0 14px rgba(255,31,116,.35));
+
+z-index:7;
 
 }
 
@@ -2611,8 +2602,8 @@ z-index:-1;
 
 @media (max-width:900px){
 
-.about__deco--crown{ width:80px; top:-28px; right:-14px; }
-.about__deco--smile{ width:64px; bottom:-20px; left:-16px; }
+.about__deco--crown{ width:60px; top:-42px; right:0; }
+.about__deco--smile{ width:46px; top:-22px; left:150px; }
 .about__deco--brush{ width:140px; left:-16px; }
 .about__deco--corners{ inset:-8px; width:calc(100% + 16px); height:calc(100% + 16px); }
 
