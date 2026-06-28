@@ -18,46 +18,116 @@ function initLightbox(imageWorks) {
     </div>
   `;
   document.body.appendChild(lightbox);
+  const lightboxImg = lightbox.querySelector(".lightbox__img");
+  
+const lightboxTitle = lightbox.querySelector(".lightbox__title");
+const lightboxMeta = lightbox.querySelector(".lightbox__meta");
+lightboxImg.style.transition =
+  "opacity .28s ease, transform .35s cubic-bezier(.22,.61,.36,1)";
+
+const btnClose = lightbox.querySelector(".lightbox__close");
+const btnPrev = lightbox.querySelector(".lightbox__nav--prev");
+const btnNext = lightbox.querySelector(".lightbox__nav--next");
 
   let lightboxIndex = 0;
+  function preloadNearby() {
+
+  if (imageWorks.length < 2) return;
+
+  const prev =
+    imageWorks[
+      (lightboxIndex - 1 + imageWorks.length) % imageWorks.length
+    ];
+
+  const next =
+    imageWorks[
+      (lightboxIndex + 1) % imageWorks.length
+    ];
+
+  [prev, next].forEach((work) => {
+
+    const img = new Image();
+    img.src = work.img;
+
+  });
+
+}
+  
 
   function render() {
-    const w = imageWorks[lightboxIndex];
-    lightbox.querySelector('.lightbox__img').src = w.img;
-    lightbox.querySelector('.lightbox__img').alt = w.title;
-    lightbox.querySelector('.lightbox__title').textContent = w.title;
-    lightbox.querySelector('.lightbox__meta').textContent = w.tag;
-  }
+
+  const w = imageWorks[lightboxIndex];
+
+  lightboxImg.style.opacity = "0";
+  lightboxImg.style.transform = "scale(.97)";
+
+  setTimeout(() => {
+
+    lightboxImg.src = w.img;
+    lightboxImg.alt = w.title;
+
+    lightboxTitle.textContent = w.title;
+    lightboxMeta.textContent = w.tag;
+
+    lightboxImg.style.opacity = "1";
+    lightboxImg.style.transform = "scale(1)";
+
+  }, 120);
+  
+  preloadNearby();
+
+}
 
   function open(index) {
-    lightboxIndex = index;
+
+  lightboxIndex = index;
+
+  document.body.style.overflow = "hidden";
+
+  lightbox.classList.add("open");
+
+  lightboxImg.style.opacity = "0";
+  lightboxImg.style.transform = "scale(.94)";
+
+  requestAnimationFrame(() => {
+
     render();
-    lightbox.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
+
+  });
+
+}
 
   function close() {
-    lightbox.classList.remove('open');
-    document.body.style.overflow = '';
-  }
 
-  lightbox.querySelector('.lightbox__close').addEventListener('click', close);
+  lightboxImg.style.opacity = "0";
+  lightboxImg.style.transform = "scale(.96)";
+
+  setTimeout(() => {
+
+    lightbox.classList.remove("open");
+    document.body.style.overflow = "";
+
+  },180);
+
+}
+
+  btnClose.addEventListener('click', close);
   lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) close();
   });
-  lightbox.querySelector('.lightbox__nav--prev').addEventListener('click', () => {
+  btnPrev.addEventListener('click', () => {
     lightboxIndex = (lightboxIndex - 1 + imageWorks.length) % imageWorks.length;
     render();
   });
-  lightbox.querySelector('.lightbox__nav--next').addEventListener('click', () => {
+  btnNext.addEventListener('click', () => {
     lightboxIndex = (lightboxIndex + 1) % imageWorks.length;
     render();
   });
   document.addEventListener('keydown', (e) => {
     if (!lightbox.classList.contains('open')) return;
     if (e.key === 'Escape') close();
-    if (e.key === 'ArrowLeft') lightbox.querySelector('.lightbox__nav--prev').click();
-    if (e.key === 'ArrowRight') lightbox.querySelector('.lightbox__nav--next').click();
+    if (e.key === 'ArrowLeft') btnPrev.click();
+    if (e.key === 'ArrowRight') btnNext.click();
   });
 
   return { open, close };
@@ -76,6 +146,7 @@ function createWorkCard(w, indexInImageWorks, lightboxApi, options = {}) {
   el.innerHTML = `
     <img class="work__img" src="${w.img}" alt="${w.title}" loading="lazy">
     <div class="work__scan"></div>
+    <div class="work__glitch"></div>
     ${showCoord ? `<div class="work__coord">X:${(Math.random() * 99).toFixed(2)} Y:${(Math.random() * 99).toFixed(2)}</div>` : ''}
     <div class="work__info">
       <div class="work__title">${w.title}</div>

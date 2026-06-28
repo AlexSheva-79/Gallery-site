@@ -14,29 +14,45 @@
 <div class="grain"></div>
 <div class="scanline"></div>
 
-<!-- language switch (separate from side-nav so it survives on mobile) -->
-<button class="lang-switch" id="langSwitch" aria-label="Switch language">
-  <span class="lang-switch__opt active" data-lang="ru">RU</span>
-  <span class="lang-switch__sep">/</span>
-  <span class="lang-switch__opt" data-lang="en">EN</span>
-</button>
-
-<!-- side nav -->
-<nav class="side-nav">
-  <div class="side-nav__brand">V.A</div>
-  <ul class="side-nav__links">
-    <li><a href="#gallery" class="active" data-label="01" data-i18n="nav.gallery">Галерея</a></li>
-    <li><a href="#about" data-label="02" data-i18n="nav.about">Художник</a></li>
-    <li><a href="#reviews" data-label="03" data-i18n="nav.reviews">Отзывы</a></li>
-    <li><a href="#contact" data-label="04" data-i18n="nav.contact">Контакты</a></li>
-  </ul>
-</nav>
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <a href="index.html" class="site-header__logo">
+    <img src="assets/logo/logo.png" alt="Fairy Teller">
+  </a>
+  <nav class="site-header__nav">
+    <a href="#top" class="active" data-i18n="nav.home">Главная</a>
+    <a href="gallery.html" data-i18n="nav.gallery">Галерея</a>
+    <a href="#about" data-i18n="nav.about">Обо мне</a>
+    <a href="#contact" data-i18n="nav.contact">Контакты</a>
+  </nav>
+  <button class="lang-switch" id="langSwitch" aria-label="Switch language">
+    <span class="lang-switch__opt active" data-lang="ru">RU</span>
+    <span class="lang-switch__sep">/</span>
+    <span class="lang-switch__opt" data-lang="en">EN</span>
+  </button>
+</header>
 
 <!-- HERO -->
-<header class="hero" id="top">
+<section class="hero" id="top">
+  <div class="hero__photobg" style="background-image:url('assets/backgrounds/hero-bg.webp')"></div>
   <div class="hero__bg" id="heroBg"></div>
   <div class="hero__grid"></div>
+
+  <img class="hero__overlay hero__overlay--noise" src="assets/overlays/noise-overlay.png" alt="" aria-hidden="true">
+  <img class="hero__overlay hero__overlay--glitch" src="assets/overlays/glitch-overlay.png" alt="" aria-hidden="true">
+  <img class="hero__overlay hero__overlay--splash-pink" src="assets/overlays/paint-splash-pink.png" alt="" aria-hidden="true">
+  <img class="hero__overlay hero__overlay--splash-cyan" src="assets/overlays/paint-splash-cyan.png" alt="" aria-hidden="true">
+  <img class="hero__overlay hero__overlay--brush" src="assets/overlays/brush-stroke-cyan.png" alt="" aria-hidden="true">
+  <img class="hero__overlay hero__overlay--corners" src="assets/overlays/corner-lines.png" alt="" aria-hidden="true">
+
   <div class="hero__content">
+    <div class="hero__serial">
+
+ARCHIVE 001
+
+</div>
+
+<div class="hero__line"></div>
     <p class="hero__eyebrow" data-i18n="hero.eyebrow">// ЦИФРОВАЯ ГАЛЕРЕЯ — АРХИВ 001</p>
     <h1 class="hero__title">
       <span data-i18n="hero.title1">ГОРОД,</span>
@@ -48,11 +64,22 @@
   </div>
   <div class="hero__dots" id="heroDots"></div>
   <div class="hero__tag">SCAN.READY</div>
-</header>
+  <div class="hero__status">
+
+<span></span>
+
+LIVE SYSTEM
+
+</div>
+</section>
+
+<div class="page-layout">
+<div class="page-layout__main">
 
 <!-- SHOWCASE -->
 <section class="gallery" id="gallery">
   <div class="section-head">
+  <div class="section-head__line"></div>
     <span class="section-head__num">01</span>
     <h2 class="section-head__title" data-i18n="showcase.title">Избранное</h2>
     <p class="section-head__desc" data-i18n="showcase.desc">Несколько кадров из архива. Полная коллекция — в галерее.</p>
@@ -74,16 +101,17 @@
 <section class="about" id="about">
   <div class="about__visual">
     <div class="about__frame">
-      <div class="about__frame-corner tl"></div>
-      <div class="about__frame-corner tr"></div>
-      <div class="about__frame-corner bl"></div>
-      <div class="about__frame-corner br"></div>
       <img class="about__photo" id="aboutPhoto" src="images/artist.png" alt="Портрет художника" onerror="this.style.display='none'; document.getElementById('aboutPlaceholder').style.display='flex';">
       <div class="about__placeholder" id="aboutPlaceholder">PORTRAIT.IMG</div>
+      <img class="about__deco about__deco--corners" src="assets/overlays/corner-lines.png" alt="" aria-hidden="true">
+      <img class="about__deco about__deco--crown" src="assets/overlays/crown-graffiti.png" alt="" aria-hidden="true">
+      <img class="about__deco about__deco--smile" src="assets/overlays/smile-graffiti.png" alt="" aria-hidden="true">
     </div>
   </div>
   <div class="about__content">
+  <div class="section-head__line"></div>
     <span class="section-head__num">02</span>
+    <img class="about__deco about__deco--brush" src="assets/overlays/brush-stroke-pink.png" alt="" aria-hidden="true">
     <h2 class="section-head__title" data-i18n="about.title">Художник</h2>
     <p class="about__text" data-i18n="about.text1">
       Я работаю на границе фотореализма и цифрового сна — там, где свет от вывесок смешивается с дождём,
@@ -114,6 +142,7 @@
 <!-- REVIEWS -->
 <section class="reviews" id="reviews">
   <div class="section-head">
+  <div class="section-head__line"></div>
     <span class="section-head__num">03</span>
     <h2 class="section-head__title" data-i18n="reviews.title">Отзывы</h2>
     <p class="section-head__desc" data-i18n="reviews.desc">Журнал отзывов и предложений. Пишите, что думаете о работах — это видят все.</p>
@@ -149,6 +178,7 @@
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="contact__inner">
+  <div class="section-head__line"></div>
     <span class="section-head__num">04</span>
     <h2 class="section-head__title" data-i18n="contact.title">Связь</h2>
     <p class="contact__text" data-i18n="contact.desc">Заказы, коллаборации, вопросы по работам — пишите.</p>
@@ -157,22 +187,88 @@
       <a href="mailto:alexsheva79@gmail.com" class="contact__card">
         <span class="contact__card-label" data-i18n="contact.email">Почта</span>
         <span class="contact__card-value">alexsheva79@gmail.com</span>
+        <span class="contact__card-arrow">→</span>
       </a>
       <a href="https://instagram.com/fairyteller_art" target="_blank" class="contact__card">
         <span class="contact__card-label">Instagram</span>
         <span class="contact__card-value">@fairyteller_art</span>
+        <span class="contact__card-arrow">→</span>
       </a>
       <a href="https://t.me/Aleksandr_v_1979" target="_blank" class="contact__card">
         <span class="contact__card-label">Telegram</span>
         <span class="contact__card-value">@Aleksandr_v_1979</span>
+        <span class="contact__card-arrow">→</span>
       </a>
     </div>
   </div>
   <footer class="footer">
-    <span>© 2026 VOID.ARCHIVE</span>
-    <span data-i18n="footer.made">Сделано вручную, кадр за кадром</span>
+    <a href="index.html" class="footer__logo">
+      <img src="assets/logo/logo.png" alt="Fairy Teller">
+    </a>
+    <span class="footer__copy">© 2026 VOID.ARCHIVE</span>
+    <div class="footer__socials">
+      <a href="https://instagram.com/fairyteller_art" target="_blank" aria-label="Instagram">IG</a>
+      <a href="https://t.me/Aleksandr_v_1979" target="_blank" aria-label="Telegram">TG</a>
+      <a href="mailto:alexsheva79@gmail.com" aria-label="Email">@</a>
+    </div>
+    <span class="footer__made" data-i18n="footer.made">Сделано вручную, кадр за кадром</span>
   </footer>
 </section>
+
+</div>
+<!-- /page-layout__main -->
+
+<!-- RIGHT SIDE PANEL -->
+<aside class="side-panel" id="sidePanel">
+  <div class="side-panel__inner">
+
+    <!-- mini hero -->
+    <div class="side-panel__block side-panel__mini-hero" id="sidePanelHero">
+      <div class="side-panel__mini-hero-bg" id="sidePanelHeroBg"></div>
+      <span class="side-panel__label">LIVE FEED</span>
+    </div>
+
+    <!-- mini gallery -->
+    <div class="side-panel__block">
+      <span class="side-panel__heading" data-i18n="sidepanel.gallery">Мини-галерея</span>
+      <div class="side-panel__mini-grid" id="sidePanelGrid"></div>
+    </div>
+
+    <!-- about -->
+    <div class="side-panel__block side-panel__about">
+      <span class="side-panel__heading" data-i18n="sidepanel.about">Об авторе</span>
+      <p class="side-panel__about-text" data-i18n="sidepanel.aboutText">Цифровой архивариус будущего, которое уже наступило.</p>
+    </div>
+
+    <!-- contacts -->
+    <div class="side-panel__block side-panel__contacts">
+      <span class="side-panel__heading" data-i18n="sidepanel.contact">Связь</span>
+      <div class="side-panel__contact-list">
+        <a href="https://instagram.com/fairyteller_art" target="_blank" class="side-panel__contact-item">
+          <span>Instagram</span><span class="side-panel__contact-arrow">→</span>
+        </a>
+        <a href="https://t.me/Aleksandr_v_1979" target="_blank" class="side-panel__contact-item">
+          <span>Telegram</span><span class="side-panel__contact-arrow">→</span>
+        </a>
+        <a href="mailto:alexsheva79@gmail.com" class="side-panel__contact-item">
+          <span>Email</span><span class="side-panel__contact-arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- banner -->
+    <a href="gallery.html" class="side-panel__banner">
+      <img src="assets/overlays/frame-neon.png" alt="" class="side-panel__banner-frame" aria-hidden="true">
+      <span class="side-panel__banner-text" data-i18n="showcase.cta">Вся галерея</span>
+    </a>
+
+  </div>
+</aside>
+
+</div>
+<!-- /page-layout -->
+
+<button class="side-panel-toggle" id="sidePanelToggle" aria-label="Toggle side panel">☰</button>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="data.js"></script>

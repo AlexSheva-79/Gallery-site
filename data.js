@@ -4,6 +4,7 @@
 
 const translations = {
   ru: {
+    "nav.home": "Главная",
     "nav.gallery": "Галерея",
     "nav.about": "Художник",
     "nav.reviews": "Отзывы",
@@ -43,8 +44,13 @@ const translations = {
     "contact.desc": "Заказы, коллаборации, вопросы по работам — пишите.",
     "contact.email": "Почта",
     "footer.made": "Сделано вручную, кадр за кадром",
+    "sidepanel.gallery": "Мини-галерея",
+    "sidepanel.about": "Об авторе",
+    "sidepanel.aboutText": "Цифровой архивариус будущего, которое уже наступило.",
+    "sidepanel.contact": "Связь",
   },
   en: {
+    "nav.home": "Home",
     "nav.gallery": "Gallery",
     "nav.about": "Artist",
     "nav.reviews": "Reviews",
@@ -84,6 +90,10 @@ const translations = {
     "contact.desc": "Commissions, collaborations, questions about the work — reach out.",
     "contact.email": "Email",
     "footer.made": "Made by hand, frame by frame",
+    "sidepanel.gallery": "Mini Gallery",
+    "sidepanel.about": "About",
+    "sidepanel.aboutText": "A digital archivist of a future that has already arrived.",
+    "sidepanel.contact": "Contact",
   },
 };
 
